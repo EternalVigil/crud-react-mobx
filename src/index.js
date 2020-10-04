@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { Provider } from 'mobx-react';
+
+import App from './components/App/';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import DataStore from './stores/DataStore';
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+	<Provider AppStore={DataStore}>
+    	<App />
+    </Provider>,
   document.getElementById('root')
 );
 
